@@ -1,0 +1,74 @@
+< !DOCTYPE html>
+<html>
+  <head>
+    <title>SandBox Weather App</title>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="weather-app">
+        <form class="search-form" id="search-form">
+          <div class="row">
+            <div class="col-6">
+              <input
+                type="search"
+                placeholder="Name of city..."
+                id="city-input"
+                class="form-control"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="form-control btn btn-primary"
+              />
+            </div>
+            <div class="col-3">
+              <button class="btn btn-succes w-100" id="current-location-button">
+                Current
+              </button>
+            </div>
+          </div>
+        </form>
+        <div id="app"></div>
+
+        <h1 id="city">Sydney, Australia</h1>
+
+        <ul>
+          <li id="date"></li>
+          <li id="description">Partly Cloudy</li>
+        </ul>
+
+        <div class="row">
+          <div class="col-6">
+            <img
+              src="https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/sun-behind-cloud.png"
+              alt="Cloudy Icon"
+              class="weather-icon"
+            />
+            <span class="temperature">19</span>
+            <span class="units">&deg;C|<a href="#">&deg;F</a></span>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Humidity: <span id="humidity"></span></li>
+              <li>Wind: <span id="wind"></span></li>
+            </ul>
+          </div>
+        </div>
+
+        <script src="src/index.js"></script>
+      </div>
+    </div>
+  </body>
+</html>
