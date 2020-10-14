@@ -41,26 +41,32 @@ function displayWeather(response) {
     response.data.wind.speed
   );
   document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
+}
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitLink = document.querySelector("#fahrenheit-link");
+  fahrenheitLink.addEventListener("click", convertToFahrenheit);
+  temperatureElement.innerHTML = (temperature * 9) / 5 + 32;
 }
 
 function searchLocation(position) {
   let apiKey = "d08d8c683375e83497aca64c3d2b6ba9";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
   axios.get(apiUrl).then(displayWeather);
 }
 
 function searchCity(city) {
   let apiKey = "d08d8c683375e83497aca64c3d2b6ba9";
-  let apiUrl = `https://api.openweathermap.org/data/2.5
-  /weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 }
 
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
-  let units = "metric";
   searchCity(city);
 }
 
