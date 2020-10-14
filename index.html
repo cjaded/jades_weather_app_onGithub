@@ -1,7 +1,6 @@
-< !DOCTYPE html>
-<html>
+<!DOCTYPE html>
   <head>
-    <title>SandBox Weather App</title>
+    <title>Jade's Weather App</title>
     <meta charset="UTF-8" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link
@@ -10,7 +9,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="src/style.css" />
   </head>
 
   <body>
@@ -34,15 +33,15 @@
               />
             </div>
             <div class="col-3">
-              <button class="btn btn-succes w-100" id="current-location-button">
-                Current
+              <button class="btn btn-succes w-90" id="current-location-button">
+                Local ⛅
               </button>
             </div>
           </div>
         </form>
         <div id="app"></div>
 
-        <h1 id="city">Sydney, Australia</h1>
+        <h1 id="city">New York, New York</h1>
 
         <ul>
           <li id="date"></li>
@@ -57,12 +56,15 @@
               class="weather-icon"
             />
             <span class="temperature">19</span>
-            <span class="units">&deg;C|<a href="#">&deg;F</a></span>
+            <span class="units">&deg;C|<a href="#" id="fahrenheit-link">&deg;F</a></span>
           </div>
           <div class="col-6">
             <ul>
-              <li>Humidity: <span id="humidity"></span></li>
-              <li>Wind: <span id="wind"></span></li>
+              <li>Humidity: <span id="humidity"></span>%
+              </li>
+              <li>Wind: <span id="wind"></span> km/h
+              </h>
+            </li>
             </ul>
           </div>
         </div>
