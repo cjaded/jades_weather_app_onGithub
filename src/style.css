@@ -41,8 +41,9 @@ li {
   line-height: 1;
 }
 .weather-icon {
+  display: inline-block;
   height: 64px;
-  width: 64px;
+  width: 64px;  
 }
 .units {
   position: relative;
@@ -69,4 +70,15 @@ li {
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.weather-app .active {
+  color:rgb (33, 33, 33);
+  cursor: default;
+}
+
+.weather-app .active:hover {
+  
+
+}
 }
